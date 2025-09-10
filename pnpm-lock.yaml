@@ -11,6 +11,9 @@ importers:
       '@huggingface/inference':
         specifier: ^4.7.1
         version: 4.7.1
+      '@huggingface/tasks':
+        specifier: ^0.19.45
+        version: 0.19.45
       '@opennextjs/cloudflare':
         specifier: ^1.8.2
         version: 1.8.2(wrangler@4.35.0)
