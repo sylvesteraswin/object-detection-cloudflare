@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import { Brackets, Box, Github } from "lucide-react";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Provider } from "@/components/context";
+import { PersonalContact } from "@/components/personal-contact";
+import { Button } from "@/components/ui/button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +30,53 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          // enableSystem
+          forcedTheme="dark"
+          disableTransitionOnChange
+        >
+          <Provider>
+            <header className="border-b-dark-gray relative z-50 h-20 border-b px-2.5 lg:px-0">
+              <div className="border-r-dark-gray border-l-dark-gray max-w-5xl flex h-20 items-center border mx-auto px-4">
+                <div className="flex w-full items-center justify-between py-3">
+                  <div className="flex items-center gap-2 text-foreground text-3xl tracking-tight md:text-5xl font-semibold relative">
+                    <Brackets className="size-12" strokeWidth={1} />
+                    <Box className="absolute inset-0 m-auto size-6" />
+                  </div>
+                </div>
+              </div>
+            </header>
+            <main>{children}</main>
+            <footer className="stext-foreground px-2.5 lg:px-0">
+              <div className="max-w-5xl mx-auto">
+                <div className="max-w-5xl mx-auto flex items-center justify-between gap-8 overflow-hidden border-r border-b border-l px-6 py-4 md:px-16">
+                  <PersonalContact />
+                  <div className="flex flex-col">
+                    <div className="text-sm font-medium text-secondary-foreground flex items-center gap-1">
+                      <Button variant={"link"} size={"sm"} asChild>
+                        <Link
+                          href="https://github.com/sylvesteraswin/object-detection-cloudflare"
+                          target="_blank"
+                        >
+                          <span className="flex items-center gap-1">
+                            <Github className="size-4" /> Github
+                          </span>
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </Provider>
+          <TailwindIndicator />
+        </ThemeProvider>
       </body>
     </html>
   );

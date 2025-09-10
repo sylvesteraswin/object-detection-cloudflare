@@ -12,21 +12,34 @@
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts"
 	},
 	"dependencies": {
-		"@opennextjs/cloudflare": "^1.6.5",
-		"next": "15.4.6",
-		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"@huggingface/inference": "^4.7.1",
+		"@opennextjs/cloudflare": "^1.8.2",
+		"@radix-ui/react-label": "^2.1.7",
+		"@radix-ui/react-slot": "^1.2.3",
+		"@radix-ui/react-switch": "^1.2.6",
+		"@t3-oss/env-nextjs": "^0.13.8",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"lucide-react": "^0.543.0",
+		"next": "15.5.2",
+		"next-themes": "^0.4.6",
+		"react": "19.1.1",
+		"react-dom": "19.1.1",
+		"tailwind-merge": "^3.3.1",
+		"zod": "^4.1.5"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3",
 		"@tailwindcss/postcss": "^4",
-		"@types/node": "^20",
+		"@types/node": "^24",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"eslint": "^9",
-		"eslint-config-next": "15.4.6",
+		"eslint-config-next": "15.5.2",
+		"jiti": "^2.5.1",
 		"tailwindcss": "^4",
+		"tw-animate-css": "^1.3.8",
 		"typescript": "^5",
-		"wrangler": "^4.33.1"
+		"wrangler": "^4.35.0"
 	}
 }
