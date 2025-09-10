@@ -1,2 +1,6 @@
+packages:
+  - .
+
+# Limit build steps to only specified native deps (optional optimization)
 onlyBuiltDependencies:
   - workerd
